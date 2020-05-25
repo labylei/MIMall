@@ -1,16 +1,29 @@
 <template>
   <div id="app">
-
+    <router-view />
   </div>
 </template>
 
 <script>
-
+import storage from './storage/index';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    
+  },
+
+  data(){
+    return {
+
+    }
+  },
+
+  mounted(){
+    //storage.setItem('a',1,'user');
+    //storage.setItem('user',{a:1});
+    //storage.clear('a');
+    storage.clear('a','user');
   }
 }
 </script>
