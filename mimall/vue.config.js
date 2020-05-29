@@ -1,3 +1,4 @@
+const webpack=require('webpack')
 module.exports={
     devServer:{
         host:'localhost',
@@ -11,5 +12,14 @@ module.exports={
               }
           }
         }
+    },
+    configureWebpack: {
+        plugins: [
+          new webpack.ProvidePlugin({
+              $:'jquery',
+              jQuery:'jquery',
+              'window.jQuery':'jquery'
+          })
+        ]
     }
 }
