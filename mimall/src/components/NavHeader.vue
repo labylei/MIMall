@@ -146,10 +146,11 @@ export default {
         getProductList(){
           this.axios.get('/products',{
             params:{
-                categoryId:'100012'
+                categoryId:'100012',
+                pageSize:6
             } 
         }).then((res)=>{
-            if(res.list.length>6){
+            if(res.list.length>=6){
                 this.phoneList=res.list.slice(0,6);
             }
         })
@@ -262,6 +263,7 @@ export default {
                              font-size: 12px;
                              line-height: 12px;
                              text-align: center;
+                             background-color: #ffffff;
                              a{
                                  display: inline-block;
                              }
