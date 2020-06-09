@@ -57,7 +57,8 @@ export default {
                 password
             }).then((res)=>{
                 this.$cookie.set('userId',res.id,{expires:'1M'});
-                //保存用户信息
+                this.$store.dispatch('saveUserName',res.username);
+                this.$store.dispatch('saveCartCount',res.cartCount);
                 this.$router.push('/index');
             })
         },
