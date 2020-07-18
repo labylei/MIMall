@@ -233,7 +233,7 @@ export default {
           })
       },
       goToCart(){
-          this.$router.push('/carts');
+          this.$router.push('/cart');
       }
     }
 }

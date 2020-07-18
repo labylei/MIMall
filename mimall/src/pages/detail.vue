@@ -49,19 +49,22 @@
           </div>
         </div>
         <div class="price-info">
+          <div class="container">
           <h2>价格说明</h2>
           <div class="desc">
             <img src="/imgs/detail/item-price.jpeg" alt="">
           </div>
+          </div>
         </div>
         </div>
       </div>
+      <service-bar></service-bar>
     </div>
 </template>
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import ProductParam from '../components/ProductParam';
-//import ServiceBar from './../components/ServiceBar';
+import ServiceBar from './../components/ServiceBar';
 export default {
     name:'detail',
     data(){
@@ -82,7 +85,8 @@ export default {
     components:{
       ProductParam,
       Swiper,
-      SwiperSlide
+      SwiperSlide,
+      ServiceBar
     },
     mounted(){
       this.getProductInfo();
