@@ -40,6 +40,7 @@
 </template>>
 
 <script>
+import { Message } from 'element-ui';
 export default {
     name:'login',
     data(){
@@ -56,19 +57,25 @@ export default {
                 username,
                 password
             }).then((res)=>{
-                this.$cookie.set('userId',res.id,{expires:'1M'});
+                this.$cookie.set('userId',res.id,{expires:'Session'});
                 this.$store.dispatch('saveUserName',res.username);
                 this.$store.dispatch('saveCartCount',res.cartCount);
-                this.$router.push('/index');
+                this.$router.push({
+                    name:'index',
+                    params:{
+                        from:'login'
+                    }
+                });
             })
         },
+        
         register(){
             this.axios.post('/user/register',{
                 username:'qiuqiu',
                 password:'123',
                 email:'qiu@163.com'
             }).then(()=>{
-                alert('注册成功');
+                Message.info('注册成功');
             })
         }
     }
