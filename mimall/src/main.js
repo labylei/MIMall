@@ -31,9 +31,8 @@ axios.interceptors.response.use(function(response){
   }else if(res.status == 10){
     if(path != '#/index'){
       window.location.href = '/#/login';
-      return Promise.reject(res);
     }
-    
+    return Promise.reject(res);
   }else{
     Message.warning(res.msg);
     return Promise.reject(res);
@@ -48,7 +47,6 @@ axios.interceptors.response.use(function(response){
 
 Vue.use(VueAxios,axios);
 Vue.use(VueCookie);
-Vue.use(Message);
 Vue.use(VueLazyLoad,{
   loading:'/imgs/loading-svg/loading-bars.svg'
 });
