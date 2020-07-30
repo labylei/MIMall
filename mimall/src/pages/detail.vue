@@ -103,15 +103,12 @@ export default {
           productId:this.id,
           selected: true
         }).then((res={cartProductVoList:0})=>{
-          this.$store.dispatch('saveCartCount', res.cartProductVoList.length);
-          this.$router.push('/cart');
+          this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
+          //this.$router.push('/cart');
         })
       },
 
-      buy(){
-        let id = this.$route.params.id;
-        this.$router.push(`/detail/${id}`);
-      }
+      
     }
     
 }
