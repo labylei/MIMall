@@ -48,16 +48,17 @@
             <a href="javascript:;" class="btn btn-huge fl" @click="addCart">加入购物车</a>
           </div>
         </div>
+        </div>
+      </div>
         <div class="price-info">
           <div class="container">
           <h2>价格说明</h2>
           <div class="desc">
-            <img src="/imgs/detail/item-price.jpeg" alt="">
+            <img src="/imgs/detail/item-price.jpeg" >
           </div>
           </div>
         </div>
-        </div>
-      </div>
+        
       <service-bar></service-bar>
     </div>
 </template>
@@ -105,6 +106,7 @@ export default {
         }).then((res={cartProductVoList:0})=>{
           this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
           //this.$router.push('/cart');
+          this.$message.success('添加成功');
         })
       },
 

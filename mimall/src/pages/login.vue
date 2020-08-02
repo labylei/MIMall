@@ -35,12 +35,12 @@
                     </div>
                 </div>
             </div>
-            <div class="footer"></div>
+            <nav-footer></nav-footer>
     </div>
 </template>>
 
 <script>
-
+import NavFooter from './../components/NavFooter'
 export default {
     name:'login',
     data(){
@@ -49,6 +49,9 @@ export default {
             password:'',
             userId:''
         }
+    },
+    components:{
+        NavFooter
     },
     methods:{
         login(){

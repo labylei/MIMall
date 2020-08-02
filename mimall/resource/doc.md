@@ -51,7 +51,7 @@ c.yum可以用于运作rpm包,类似仓库。如对包的管理操作：
 
 d.wget + 下载链接
 Nodejs: wget https://npm.taobao.org/mirrors/node/v12.14.0/node-v12.14.0-linux-x64.tar.xz
-
+111
 SFTP安装：
 参考百度云文档：https://cloud.baidu.com/doc/BCC/s/ljxlpwkwv
 
